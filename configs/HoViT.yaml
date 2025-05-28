@@ -1,0 +1,29 @@
+image_root: ./train/NCT-CRC-HE-100K  
+num_classes: 9
+batch_size: 32
+
+epochs: 200
+lr: 0.0001
+
+stage1:
+  dim: 256
+  out_dim: 256
+  num_heads: 4
+  num_blocks: 4
+  num_select: 2
+  downsample: false
+
+stage2:
+  dim: 256
+  out_dim: 384
+  num_heads: 6
+  num_blocks: 4
+  num_select: 2
+  downsample: true
+
+use_lora: false
+lora_rank: 16
+lora_alpha: 32
+lora_exclude:
+  - head
+  - head_dist
